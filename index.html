@@ -40,7 +40,7 @@
       }
 
        function dibujar2() {
-
+/*
         // Create the data table.
         var data = new google.visualization.DataTable();
         data.addColumn('string', 'Topping');
@@ -58,8 +58,8 @@
 
         // Instantiate and draw our chart, passing in some options.
         var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
-        chart.draw(data, options);
-      }
+        chart.draw(data, options);*/
+      
 	    
 	    button.addEventListener('pointerup', function(event) {
   navigator.bluetooth.requestDevice({ filters: [{ services: ['battery_service'] }] })
@@ -72,7 +72,7 @@
 })
 .then(server => { /* ... */ })
 .catch(error => { console.log(error); });
-});
+});}
     </script>
 </head>
 <body>
