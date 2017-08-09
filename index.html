@@ -60,6 +60,19 @@
         var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
         chart.draw(data, options);
       }
+	    
+	    button.addEventListener('pointerup', function(event) {
+  navigator.bluetooth.requestDevice({ filters: [{ services: ['battery_service'] }] })
+.then(device => {
+  // Human-readable name of the device.
+  console.log(device.name);
+
+  // Attempts to connect to remote GATT Server.
+  return device.gatt.connect();
+})
+.then(server => { /* ... */ })
+.catch(error => { console.log(error); });
+});
     </script>
 </head>
 <body>
