@@ -8,9 +8,11 @@
 
 <script>
 
-  navigator.bluetooth.requestDevice({ filters: [{name: "Unique Name"}] });
-
-    console.log(device);
+  function bluetoothConnect() {
+  navigator.bluetooth.requestDevice({filters: [{services: ['generic_access']}]})
+	  .then(device => {console.log('Connected to: ${device.name}')})
+	  .catch(console.error);
+}
  
 </script>
 </body>
