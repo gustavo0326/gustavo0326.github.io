@@ -8,7 +8,7 @@
 
 <script>
 $('#target').click(function() { 
-  chrome.bluetooth.startDiscovery(function () { 
+  navigator.bluetooth.startDiscovery(function () { 
   navigator.bluetooth.requestDevice({ filters: [{ services:['battery_service'] }] })
   .then(device => {
 
